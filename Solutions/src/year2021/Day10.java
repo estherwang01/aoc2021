@@ -39,7 +39,6 @@ public class Day10 {
         }
         long t = 0;
         while(!seen.isEmpty()){
-            System.out.println(swap.get(seen.peek()));
             t = (t* 5) + cost.get(swap.get(seen.pop()));
         }
         System.out.println(t);
@@ -61,7 +60,8 @@ public class Day10 {
         swap.put("<", ">");
         swap.put("{", "}");
         try{
-            Scanner s = new Scanner(new File("Solutions\\data21\\day10"));
+            String delimiter = System.getProperty("file.separator");
+            Scanner s = new Scanner(new File("Solutions" + delimiter + "data21" + delimiter + "day10"));
             ArrayList<Long> total = new ArrayList<>();
             while(s.hasNextLine()){
                 String line = s.nextLine();
