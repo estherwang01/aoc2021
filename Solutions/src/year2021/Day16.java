@@ -88,9 +88,9 @@ public class Day16 {
                 case 3:
                     return input.stream().mapToLong(n -> Long.valueOf(n, 2)).max().orElse(-1);
                 case 5:
-                    return ((Long.valueOf(input.get(0), 2)) > (Long.valueOf(input.get(1), 2)) ? (long) 1 : (long)0);
+                    return ((Long.valueOf(input.get(0), 2)).compareTo(Long.valueOf(input.get(1), 2)) > 0 ? (long) 1 : (long)0);
                 case 6:
-                    return ((Long.valueOf(input.get(0), 2)) < (Long.valueOf(input.get(1), 2)) ? (long) 1 : (long)0);
+                    return ((Long.valueOf(input.get(0), 2)).compareTo(Long.valueOf(input.get(1), 2)) < 0 ? (long) 1 : (long)0);
                 case 7:
                     return (long) (input.get(0).equals(input.get(1)) ? 1: 0);
             }
