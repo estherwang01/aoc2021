@@ -67,19 +67,13 @@ public class Day19 {
         current.pos = new int[]{0,0,0};
 
         ArrayList<Scnr> nonempty = new ArrayList<>();
-        scanners.remove(0);
-        nonempty.add(current);
         while(!scanners.isEmpty()){
             for(Scnr sc: scanners){
                 if(!sc.fixed.isEmpty()){
                     continue;
                 }
-                for(Scnr ss: nonempty){
+                for(Scnr ss: scanners){
                     sc.overlap12(ss);
-                }
-                if(!sc.fixed.isEmpty()){
-                    scanners.remove(sc);
-                    nonempty.add(sc);
                 }
             }
         }
@@ -135,6 +129,7 @@ public class Day19 {
                     }
                     HashSet<ArrayList<Integer>> common = new HashSet<>(shifted);
                     common.retainAll(other.fixed); //intersection
+                    System.out.println(common.size());
                     if(common.size() >= 12){
                         this.fixed = shifted;
                         this.pos = new int[]{dx, dy, dz};
