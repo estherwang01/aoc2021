@@ -1,5 +1,4 @@
 const fs = require('fs');
-const internal = require('stream');
 const allContents = fs.readFileSync('day4input.txt', 'utf-8');
 var total = 0 
 allContents.split(/\r?\n/).forEach((line) => {
